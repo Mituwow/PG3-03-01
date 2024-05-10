@@ -40,9 +40,20 @@ int main() {
 	for (auto itr = lst.begin(); itr != lst.end(); ++itr) {
 		printf("%s\n", *itr);
 	}
-	
+	printf("------------------\n\n");
 
-
+	//西日暮里を日暮里と田端の間に追加
+	for (std::list<const char*>::iterator itr = lst.begin(); itr != lst.end(); ++itr) {
+		if(*itr == "Tabata") {
+			itr = lst.insert(itr, "Nishi-Nippori");
+			++itr;
+		}
+	}
+	printf("2019年の山手線の駅一覧\n\n");
+	for (auto itr = lst.begin(); itr != lst.end(); ++itr) {
+		printf("%s\n", *itr);
+	}
+	printf("------------------\n\n");
 
 	return 0;
 }
