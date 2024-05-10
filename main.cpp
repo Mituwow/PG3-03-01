@@ -55,5 +55,18 @@ int main() {
 	}
 	printf("------------------\n\n");
 
+	//高輪ゲートウェイを品川と田町の間に追加
+	for (std::list<const char*>::iterator itr = lst.begin(); itr != lst.end(); ++itr) {
+		if (*itr == "Tamachi") {
+			itr = lst.insert(itr, "Takanawa Gateway");
+			++itr;
+		}
+	}
+	printf("2022年の山手線の駅一覧\n\n");
+	for (auto itr = lst.begin(); itr != lst.end(); ++itr) {
+		printf("%s\n", *itr);
+	}
+	printf("------------------\n\n");
+
 	return 0;
 }
